@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+void spiralPrint(int input[][1000], int row, int col){
+	/* Don't write main().
+	* Don't read input, it is passed as function argument.
+	* Print output and don't return it.
+	* Taking input is handled automatically.
+	*/
+  int i;
+int count=0;
+  int r1=0;
+  int r2=row-1;
+  int y1=col-1;
+  int y2=0;
+  int n=(row*col);
+  int x=1;
+  while(count<n){
+    //if(x=1){
+    for(int i=y2;i<=y1;i++){
+      cout<<input[r1][i]<<' ';
+      count++;
+    }
+      r1=r1+1;
+      //x=2;
+    //}
+   // if(x=2){
+      for(i=r1;i<=r2;i++){
+        cout<<input[i][y1]<<' ';
+        count++;
+      }
+       y1=y1-1;
+      //  x=3;
+        
+    //}
+    //if(x=3){
+      for(i=y1;i>=y2;i--){
+        cout<<input[r2][i]<<' ';
+        count++;
+      }
+       r2=r2-1;
+      //  x=4;
+    //}
+    //if(x=4){
+      for(i=r2;i>=r1;i--){
+        cout<<input[i][y2]<<' ';
+        count++;
+      }
+       y2=y2+1;
+      //  x=1;
+    //}
+  }
+}
+
