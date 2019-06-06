@@ -1,0 +1,24 @@
+void Leaders(int* arr,int len)
+{
+	/* Don't write main().
+	 * Don't read input, it is passed as function argument.
+	 * Print your output exactly in the same format as shown. 
+	 * Don't print any extra line.
+	*/
+  int a[len];
+  int max=arr[len-1];
+  //cout<<max<<" ";
+  a[0]=max;
+  int l=1;
+  for(int i=len-2;i>=0;i--){
+    if(arr[i]>=max){
+      max=arr[i];
+      //cout<<max<<" ";
+      a[l]=max;
+      l++;
+    }
+  }
+  for(int i=l-1;i>=0;i--){
+    cout<<a[i]<<" ";
+  }
+}
