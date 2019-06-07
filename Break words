@@ -1,0 +1,54 @@
+void breakWords(char* S)
+{
+	/*
+	 * Don't write main.
+	 * Don't return or print anything.
+	 * Changes should be done in the given string.
+	*/
+  char temp[100000];
+  int p;
+  int i=0;
+  int x=0;
+  int n=strlen(S);
+  while(i<n){
+    p=i;
+ 
+    while((S[p]!='\0' )&&( S[p]!=' ')){
+         p=p+1;      
+    }
+     int k=(p-i);
+    //cout<<i<<" "<<k<<" "<<p<<endl;
+      if(k>=4 && k%2==0){
+      while(i!=(p-k/2)){
+        temp[x]=S[i];
+        x++;
+        i++;
+      }
+      temp[x]=' ';
+      x++;
+     // i++;
+      while(i!=p){
+        temp[x]=S[i];
+        x++;
+        i++;
+      }
+    }
+    else
+    {while(i!=p){
+        temp[x]=S[i];
+        i++;
+        x++;
+      }
+    }
+ 
+    temp[x++]=' ';
+    i=p+1;
+ 
+ 
+  }
+  for(n=0;n<x;n++){
+   S[n]=temp[n];
+  }
+  S[n]='\0';
+ 
+}
