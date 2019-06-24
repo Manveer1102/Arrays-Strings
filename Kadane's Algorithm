@@ -1,0 +1,49 @@
+using namespace std;
+
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+        int flag=0;
+        int n;
+        cin>>n;
+        int arr[n];
+        for(int i=0;i<n;i++){
+            cin>>arr[i];
+        }
+        for(int i=0;i<n;i++){
+            if(arr[i]>=0){
+                flag=1;
+                break;
+            }
+        }
+        int min=arr[0];
+        if(!flag){
+            for(int i=1;i<n;i++){
+                if(arr[i]>min){
+                    min=arr[i];
+                }
+            }
+        }
+        int max=0;
+            int max_final=0;
+        if(flag){
+            for(int i=0;i<n;i++){
+                max=max+arr[i];
+                if(max<0){
+                    max=0;
+                }
+                if(max>max_final){
+                    max_final=max;
+                }
+            }
+        }
+        if(!flag){
+            cout<<min<<endl;
+        }
+        if(flag==1){
+            cout<<max_final<<endl;
+        }
+    }
+	return 0;
+}
